@@ -1,0 +1,45 @@
+<script type="text/javascript">
+"use strict";
+
+var array = [1,2,3,4];
+//fonction moyenne
+var res;
+res = array.reduce(function(accu,item,index,array){ 
+	return  accu + (item /array.length);
+},0);
+
+//fonction tableau* 2
+var res2;
+res2 = array.map(function(item){
+	return  item *2;
+});
+
+// définir un objet
+
+var obj = {
+	"Name" :"Pauline",
+	"Age" : 24,
+	"Skill": ["javascript","html","java"],
+	"hi":function(){console.log('hi')}
+}
+
+//définir une class
+
+function Humain (nom){
+	this.nom = nom;// attribut
+}
+
+var h1 = new Humain("Pauline");
+
+Humain.prototype.hello = function (){
+	console.log("Hello " + this.nom);
+}
+
+//Constructeur parent (Héritage : "class B extends A" signifie que  B.prototype.constructor === A; utiliser Object.create())
+
+function Formateur (name){
+	Humain.call(this.name);
+}
+
+console.log(Humain.prototype.hello ());// exemple : console.log(obj.Name);
+</script>
