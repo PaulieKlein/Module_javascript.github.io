@@ -14,13 +14,13 @@ res2 = array.map(function(item){
 	return  item *2;
 });
 
-// définir un objet
+// définir un objet  exemple : console.log(obj.Name);
 
 var obj = {
 	"Name" :"Pauline",
 	"Age" : 24,
 	"Skill": ["javascript","html","java"],
-	"hi":function(){console.log('hi')}
+	"hi":function(){console.log('hi')} 
 }
 
 //définir une class
@@ -41,5 +41,27 @@ function Formateur (name){
 	Humain.call(this.name);
 }
 
-console.log(Humain.prototype.hello ());// exemple : console.log(obj.Name);
+//this 
+
+(function(){
+	//"use strict";
+
+	var obj1 = {
+		b: 1,
+		m:function(a) {
+			var self = this
+			console.log(a.map(function(item){
+				
+				return this.b + item;
+				}.bind(this) // permet de créer une nouvelle fonction dont le context est bloqué	
+				))
+		}
+		
+	}
+
+	obj1.m();
+}
+	)()
+
+console.log(Humain.prototype.hello ());
 </script>
